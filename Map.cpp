@@ -12,7 +12,7 @@ map::map()
 
 	int startBonusCount;
 	int startMoneyCount;
-	floor = new cell **[len];				//Выделяем память под матрицу floor размера len*wid*hei
+	floor = new cell **[len];				//Vydelyaem pamyat pod matricu floor razmera len*wid*hei
 	for (int i = 0; i < len; i++)
 	{
 		floor[i] = new cell *[wid];
@@ -22,7 +22,7 @@ map::map()
 	for (int i = 0; i < len; i++)
 		for (int j = 0; j < wid; j++)
 			for (int k = 0; k < hei; k++)
-				floor[i][j][k] = cell::WALL;		 //Всё заполняется "стеной"
+				floor[i][j][k] = cell::WALL;		 //Vsyo zapolnyaetsya "stenoj"
 
 	for (int k = 0; k < hei; k++)
 	{
@@ -54,19 +54,19 @@ map::map()
 		}
 		roomsCount = 0;
 
-		//Создание "рамок"
+		//Sozdanie "ramok"
 		makeLine(0, 0, k, wid, line::RIGHT, cell::WALL);
 		makeLine(len - 1, 0, k, wid, line::RIGHT, cell::WALL);
 		makeLine(0, 0, k, len, line::DOWN, cell::WALL);
 		makeLine(0, wid - 1, k, len, line::DOWN, cell::WALL);
 
-		//Расстановка лифтов
+		//Rasstanovka liftov
 		if (k != hei - 1)
 			makeLine(2, 1, k, 4, line::DOWN, cell::LIFT_UP);
 		if (k != 0)
 			makeLine(1, 2, k, 4, line::RIGHT, cell::LIFT_DOWN);
 
-		//Раскидывание бонусов
+		//Raskidyvanie bonusov
 		startBonusCount = (rand() % 8 + 3);
 		for (int r = 0; r < startBonusCount; r++)
 		{
@@ -74,7 +74,7 @@ map::map()
 			bonusCount -= 1;
 		}
 
-		//Раскидывание денег
+		//Raskidyvanie deneg
 		startMoneyCount = (rand() % 6 + 2);
 		for (int r = 0; r < startMoneyCount; r++)
 		{
@@ -90,7 +90,7 @@ map::map(int g, int h, int d)
 	int s = 0;
 	int startBonusCount;
 	int startMoneyCount;
-	floor = new cell **[len];				//Выделяем память под матрицу floor размера len*wid
+	floor = new cell **[len];				//Vydelyaem pamyat pod matricu floor razmera len*wid
 	for (int i = 0; i < len; i++)
 	{
 		floor[i] = new cell *[wid];
@@ -100,17 +100,17 @@ map::map(int g, int h, int d)
 	for (int i = 0; i < len; i++)
 		for (int j = 0; j < wid; j++)
 			for (int k = 0; k < hei; k++)
-				floor[i][j][k] = cell::BLANK;				//Заполняем всё нулями
+				floor[i][j][k] = cell::BLANK;				//Zapolnyaem vsyo nulyami
 
 	for (int k = 0; k < hei; k++)
 	{
-		//Создание "рамок"
+		//Sozdanie "ramok"
 		makeLine(0, 0, k, wid, line::RIGHT, cell::WALL);
 		makeLine(len - 1, 0, k, wid, line::RIGHT, cell::WALL);
 		makeLine(0, 0, k, len, line::DOWN, cell::WALL);
 		makeLine(0, wid - 1, k, len, line::DOWN, cell::WALL);
 
-		//Создание перекрёстных коридоров
+		//Sozdanie perekryostnyx koridorov
 		if (len % 2 == 0)
 		{
 
@@ -148,7 +148,7 @@ map::map(int g, int h, int d)
 			makeLine(len / 2 - 2, wid - 1, k, wid / 2 - 1, line::LEFT, cell::WALL);
 		}
 
-		if (wid % 2 == 0)							//Создание "дверей"
+		if (wid % 2 == 0)							//Sozdanie "dverej"
 		{
 			makeLine(1, wid / 4 - 2, k, len - 2, line::DOWN, cell::BLANK);
 			makeLine(1, wid / 4 - 1, k, len - 2, line::DOWN, cell::BLANK);
@@ -162,7 +162,7 @@ map::map(int g, int h, int d)
 			makeLine(1, wid / 4 * 3 + 1, k, len - 2, line::DOWN, cell::BLANK);
 		}
 
-		if (len % 2 == 0)							//Создание "дверей"
+		if (len % 2 == 0)							//Sozdanie "dverej"
 		{
 			makeLine(len / 4 - 2, 1, k, wid - 2, line::RIGHT, cell::BLANK);
 			makeLine(len / 4 - 1, 1, k, wid - 2, line::RIGHT, cell::BLANK);
@@ -195,7 +195,7 @@ map::map(int g, int h, int d)
 	}
 }
 
-//Функция, рисующая линию      (коорд. i  | коорд. j |  длина линии |  направление    |    линия чего)
+//Funkciya, risuyushhaya liniyu      (koord. i  | koord. j |  dlina linii |  napravlenie    |    liniya chego)
 void map::makeLine(int iFrom, int jFrom, int kFrom, int lineLength, line lineWhere, cell lineOfWhat)
 {
 	if (lineWhere == line::RIGHT)
@@ -212,7 +212,7 @@ void map::makeLine(int iFrom, int jFrom, int kFrom, int lineLength, line lineWhe
 			floor[i][jFrom][kFrom] = lineOfWhat;
 }
 
-//Функция, размещающая бонус в случайном месте карты
+//Funkciya, razmeshhayushhaya bonus v sluchajnom meste karty
 void map::spawnBonus(int floorNumber)
 {
 	if (bonusCount < 15)
@@ -232,7 +232,7 @@ void map::spawnBonus(int floorNumber)
 	}
 }
 
-//Функция, размещающая деньги в случайном месте карты
+//Funkciya, razmeshhayushhaya dengi v sluchajnom meste karty
 void map::spawnMoney(int floorNumber)
 {
 	if (moneyCount < 5)
@@ -251,7 +251,7 @@ void map::spawnMoney(int floorNumber)
 	}
 }
 
-//Функция, создающая комнату с четырьмя дверями
+//Funkciya, sozdayushhaya komnatu s chetyrmya dveryami
 void map::makeRoom(int iiRoom, int jjRoom, int floorNumber, int roomLenn, int roomWidd)
 {
 	for (int i = iiRoom; i < iiRoom + roomLenn; i++)
@@ -274,11 +274,11 @@ void map::makeRoom(int iiRoom, int jjRoom, int floorNumber, int roomLenn, int ro
 	room.push_back(tempRoom);
 };
 
-//Проверка клетки
-bool map::canYouMove(cell r)			//Функция, проверяющая возможность перемещения
+//Proverka kletki
+bool map::canYouMove(cell r)			//Funkciya, proveryayushhaya vozmozhnost peremeshheniya
 {
 	if ((r == cell::WALL) || (r == cell::PLAYER1) || (r == cell::PLAYER2))
-	return false;
+		return false;
 	else return true;
 }
 bool map::isbonus(cell b)
@@ -288,7 +288,7 @@ bool map::isbonus(cell b)
 	else return false;
 }
 
-map::~map()					//Очистка выделеной памяти
+map::~map()					//Ochistka vydelenoj pamyati
 {
 	for (int i = 0; i < len; i++)
 	{

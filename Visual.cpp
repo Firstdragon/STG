@@ -6,7 +6,7 @@ visual::visual()
 visual::~visual()
 {};
 
-// Вывод текущего состояния карты в консоль
+// Vyvod tekushhego sostoyaniya karty v konsol
 void visual::gameConsoleOut(map &mapp, int p1hap, int p2hap, int p1money, int p2money, int p1s, int p2s)
 {
 	system("cls");
@@ -71,7 +71,7 @@ void visual::gameConsoleOut(map &mapp, int p1hap, int p2hap, int p1money, int p2
 	}
 }
 
-// Вывод информации в конце игры
+// Vyvod informacii v konce igry
 void visual::gameOver(int p1hap, int p2hap, int p1money, int p2money)
 {
 	system("cls");

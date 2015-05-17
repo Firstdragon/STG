@@ -28,30 +28,30 @@ public:
 
 	std::vector <rooms> room;
 
-	int len;		 //длина
-	int wid;		 //ширина
-	int hei;		 //высота
-	cell ***floor;	 //карта
-	int bonusCount = 0;  //количество бонусов
-	int moneyCount = 0;	 //количество денег
+	int len;		 //dlina
+	int wid;		 //shirina
+	int hei;		 //vysota
+	cell ***floor;	 //karta
+	int bonusCount = 0;  //kolichestvo bonusov
+	int moneyCount = 0;	 //kolichestvo deneg
 
 	map();
 		
 	map(int g, int h, int d);
 
-	//Функция, рисующая линию      (коорд. i  | коорд. j |  длина линии |  направление    |    линия чего)
+	//Funkciya, risuyushhaya liniyu      (koord. i  | koord. j |  dlina linii |  napravlenie    |    liniya chego)
 	void makeLine(int iFrom, int jFrom, int kFrom, int lineLength, line lineWhere, cell lineOfWhat);
 
-	//Функция, размещающая бонус в случайном месте карты
+	//Funkciya, razmeshhayushhaya bonus v sluchajnom meste karty
 	void spawnBonus(int floorNumber);
 
-	//Функция, размещающая деньги в случайном месте карты
+	//Funkciya, razmeshhayushhaya dengi v sluchajnom meste karty
 	void spawnMoney(int floorNumber);
 
-	//Функция, создающая комнату с четырьмя дверями
+	//Funkciya, sozdayushhaya komnatu s chetyrmya dveryami
 	void makeRoom(int iiRoom, int jjRoom, int floorNumber, int roomLenn, int roomWidd);
 
-	//Проверка клетки
+	//Proverka kletki
 	bool canYouMove(cell r);
 	bool isbonus(cell b);
 

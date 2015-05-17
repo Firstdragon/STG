@@ -18,13 +18,13 @@ class gameEngine
 {
 protected:
 public:
-	int caughtKey;		// Номер захваченной с клавиатуры клавиши
-	player player1;		// Игрок 1
-	player player2;		// Игрок 2
+	int caughtKey;		// Nomer zaxvachennoj s klaviatury klavishi
+	player player1;		// Igrok 1
+	player player2;		// Igrok 2
 	bot bot1;
 	bot bot2;
-	visual vis;		// Объект класса visual
-	map mapp;		// Объект класса map
+	visual vis;		// Obekt klassa visual
+	map mapp;		// Obekt klassa map
 
 
 	gameEngine()
@@ -33,12 +33,12 @@ public:
 	~gameEngine()
 	{};
 
-	// Режим игры
+	// Rezhim igry
 	void gameMode();
 
-	// Начальные установки
+	// Nachalnye ustanovki
 	void startGame(map &map, player &player1, player &player2);
 
-	// Процесс игры
+	// Process igry
 	void playGame();
 };

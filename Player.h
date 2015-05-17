@@ -15,24 +15,24 @@ class player
 {
 protected:
 public:
-	int playerHappiness;		// Хеппинес игрока
-	int playerMoney;		// Количество денег игрока
-	int moveUp;			// Номер клавиши, отвечающей за движение вверх
-	int moveDown;			// Номер клавиши, отвечающей за движение вниз
-	int moveLeft;			// Номер клавиши, отвечающей за движение влево
-	int moveRight;			// Номер клавиши, отвечающей за движение вправо
-	bool botMode;			// Состояние игрока (бот/реальный игрок), будет реализовано позже
-	int ii;				// Координата i игрока
-	int jj;				// Координата j игрока
-	int kk;				// Координата k игрока
-	int playerSimbol;		// Символ игрока, отображающийся в консоли
+	int playerHappiness;		// Happiness igroka
+	int playerMoney;		// Money igroka
+	int moveUp;			// Nomer klavishi otvechaushei za dvijenie vverh
+	int moveDown;			// Nomer klavishi otvechaushei za dvijenie vniz
+	int moveLeft;			// Nomer klavishi otvechaushei za dvijenie vlevo
+	int moveRight;			// Nomer klavishi otvechaushei za dvijenie vpravo
+	bool botMode;			// Sostoyanie igroka (Player, bot)
+	int ii;				// Koordinata i igroka
+	int jj;				// Koordinata j igroka
+	int kk;				// Koordinata k igroka
+	int playerSimbol;		// Simvol igroka, otobrazhayushhijsya v konsoli
 
 	player();
 
-	// Управление
+	// Upravlenie
 	void playerControls();
 
-	// Движение игрока
+	// Dvizhenie igroka
 	int playerMoving(int caughtKey, map &map, cell r);
 
 	~player();

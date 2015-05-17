@@ -102,17 +102,17 @@ void gameEngine::playGame()
 		if (player1.botMode == false && player2.botMode == true)
 		{
 			player1.playerMoving(caughtKey, mapp, cell::PLAYER1);
-			player2.playerMoving(bot2.move(mapp, player2, player2.kk), mapp, cell::PLAYER2);
+			player2.playerMoving(bot2.move(mapp, player2, player2.kk, mapp.len, mapp.wid), mapp, cell::PLAYER2);
 		}
 		if (player1.botMode == true && player2.botMode == false)
 		{
-			player1.playerMoving(bot1.move(mapp, player1, player1.kk), mapp, cell::PLAYER1);
+			player1.playerMoving(bot1.move(mapp, player1, player1.kk, mapp.len, mapp.wid), mapp, cell::PLAYER1);
 			player2.playerMoving(caughtKey, mapp, cell::PLAYER2);
 		}
 		if (player1.botMode == true && player2.botMode == true)
 		{
-			player1.playerMoving(bot1.move(mapp, player1, player1.kk), mapp, cell::PLAYER1);
-			player2.playerMoving(bot2.move(mapp, player2, player2.kk), mapp, cell::PLAYER2);
+			player1.playerMoving(bot1.move(mapp, player1, player1.kk, mapp.len, mapp.wid), mapp, cell::PLAYER1);
+			player2.playerMoving(bot2.move(mapp, player2, player2.kk, mapp.len, mapp.wid), mapp, cell::PLAYER2);
 		}
 
 		srand(time(0));

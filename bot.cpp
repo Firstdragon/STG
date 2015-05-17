@@ -1,6 +1,6 @@
 #include "bot.h"
 
-int bot::move(map &map, player &playerbot, int k)
+int bot::move(map &map, player &playerbot, int k, int len, int wid)
 {
 	if ((isherei == 0 || isherej == 0) || (isherei == playerbot.ii && isherej == playerbot.jj) || (!map.isbonus(map.floor[isherei][isherej][k]) && !reset))
 	{
@@ -44,10 +44,14 @@ int bot::move(map &map, player &playerbot, int k)
 		if (isherej > playerbot.jj && map.canYouMove(map.floor[playerbot.ii][playerbot.jj + 1][k]))
 			return playerbot.moveRight;
 	}
-	srand(time(0));
-	isherei = (rand() % len);
-	isherej = (rand() % wid);
-
+	l = 0;
+	while (!map.canYouMove(map.floor[isherei][isherej][k]) || l == 0)
+	{
+		l++;
+		srand(time(0) + l);
+		isherei = (rand() % len);
+		isherej = (rand() % wid);
+	}
 	reset = true;
 	if (map.canYouMove(map.floor[playerbot.ii - 1][playerbot.jj][k]))
 		return playerbot.moveUp;

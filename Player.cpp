@@ -3,7 +3,7 @@
 player::player()
 {};
 
-// Управление
+// Upravlenie
 void player::playerControls()
 {
 	std::cout << "Push button which you will use for move up:    ";
@@ -24,7 +24,7 @@ void player::playerControls()
 
 }
 
-// Движение игрока
+// Dvizhenie igroka
 int player::playerMoving(int caughtKey, map &map, cell r)
 {
 	if (caughtKey == moveUp)

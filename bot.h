@@ -18,11 +18,10 @@ public:
 	int s = 0;
 	int z = 0;
 	int x = 0;
+	int l = 0;
 	int isherei = 0;
 	int isherej = 0;
-	int len = 24;
-	int wid = 48;
 	bool reset = false;
 
-	int move(map &map, player &playerbot, int k);
+	int move(map &map, player &playerbot, int k, int len, int wid);
 };
