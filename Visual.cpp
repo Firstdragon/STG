@@ -76,6 +76,6 @@ void visual::gameOver(int p1hap, int p2hap, int p1money, int p2money)
 {
 	system("cls");
 	std::cout << "\n\t\t\tGAME OVER\n\n\tPLAYER 1 TOTAL HAPPINESS: " << p1hap << "\tPLAYER 2 TOTAL HAPPINESS :" << p2hap <<
-		"\n\n\tPLAYER 1 REMAINING MONEY: " << p1money << "\tPLAYER 1 REMAINING MONEY: " << p2money << "\n\n";
+		"\n\n\tPLAYER 1 REMAINING MONEY: " << p1money << "\tPLAYER 2 REMAINING MONEY: " << p2money << "\n\n";
 
 }
